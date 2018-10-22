@@ -1,0 +1,25 @@
+{
+  "name": "web_scraper",
+  "version": "1.0.0",
+  "description": "Web Scraping app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eshaffer5612/Web_Scraper.git"
+  },
+  "author": "Edmond Shaffer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eshaffer5612/Web_Scraper/issues"
+  },
+  "homepage": "https://github.com/Eshaffer5612/Web_Scraper#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.5",
+    "morgan": "^1.9.1"
+  }
+}
