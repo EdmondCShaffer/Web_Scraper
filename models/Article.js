@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
-const Schema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
 // create a new UserSchema object
 
-const ArticleSchema = new Schema({
+let ArticleSchema = new Schema({
   
   title: {
     type: String,
@@ -22,3 +22,7 @@ const ArticleSchema = new Schema({
     ref: "Note"
   }
 });
+
+let Article = mongoose.model("Article", ArticleSchema);
+
+module.exports = Article;

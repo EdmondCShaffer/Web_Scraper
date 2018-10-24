@@ -1,2 +1,29 @@
- <div>{{articles}}</div>
-      <div>{{notes}}</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    {{!--
+    <div>{{articles}}</div>
+    <div>{{notes}}</div> --}} 
+    {{#each content}}
+    <div class="card blue">
+        <div class="card-content white-text">
+            <span class="card-title">{{this.title}}</span>
+            <a href="{{this.link}}">Link to Item</a>
+        </div>
+        <div class="card-action">
+            <a id="saveItem" data-id="{{this._id}}">Save For Later</a>
+        </div>
+    </div>
+    {{/each}}
+
+</body>
+
+</html>
