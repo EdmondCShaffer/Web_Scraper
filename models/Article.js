@@ -1,28 +1,23 @@
-const mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
-// Save a reference to the Schema constructor
-let Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
-// create a new UserSchema object
-
-let ArticleSchema = new Schema({
-  
+var ArticleSchema = new Schema({
   title: {
     type: String,
     required: true
   },
-  
   link: {
     type: String,
     required: true
   },
-
-  note: {
+  comment: [{
     type: Schema.Types.ObjectId,
     ref: "Note"
-  }
+  }]
 });
 
-let Article = mongoose.model("Article", ArticleSchema);
+var Article = mongoose.model("Article", ArticleSchema);
 
+//export model
 module.exports = Article;

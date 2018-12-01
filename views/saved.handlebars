@@ -1,0 +1,63 @@
+<div class="section grey lighten-2 news">
+    <div class="row">
+        {{#if articles}}
+        {{#each articles}}
+        <a class="links" href={{this.link}}>
+            <div class="col s12 l3 savedNews">
+                <div class="card horizontal hoverable">
+        </a>
+
+        <div class="card ">
+            <div class="card-title">
+                <a href={{this.link}}>
+                    <span class="card-title  black-text text-lighten-3">{{this.title}}</span>
+                </a>
+            </div>
+            <div class="card-content">
+
+                <span class="card-title activator body"> {{this.body}} (click to add note)</span>
+            </div>
+            <div class="card-reveal">
+                <div class="row">
+                    <span class="card-title btn ">Notes</span>
+                    <div class="input-field col s12">
+                        <input placeholder="noteTitle" id="noteTitle" class="validate" type="text">
+                        <lable for="noteTitle">Notes Title</lable>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="noteBody" class="noteBody"></textarea>
+                        <label for="noteBody">your note</label>
+                    </div>
+                    <div class="btn saveNote col s12" data-id={{this.id}}>Save note</div>
+
+                    <div class="row">
+                        <div class="noteArea">
+                            <div class="noteTitle">
+                                <div class="notes"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-action">
+            </div>
+            <a class="waves-effect waves-blue btn removeArt" data-id={{this._id}}>Delete from saved</a>
+        </div>
+    </div>
+</div>
+</div>
+{{/each}}
+{{else}}
+<div class="section white lighten-2 bottomFront">
+    <div class="container-fluid center">
+        <div class="row">
+            <h3>There seems to be no saved news! <br> go back to the home page!</h3>
+        </div>
+        <div class="row">
+            <a class="waves-effect red btn scraped">Home</a>
+        </div>
+    </div>
+</div>
+{{/if}}

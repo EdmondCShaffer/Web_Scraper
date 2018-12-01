@@ -1,0 +1,37 @@
+<div class="container">
+    <div class=" col s12 l12">
+        <nav>
+            <div class="nav-wrapper grey">
+                <a href="#" class="brand-logo center-align"> The Verge Tech</a>
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/saved" class="btn btn waves-effect red">Saved Articles</a></li>
+                    <li><a class="btn btn waves-effect red scrapeAgain">Scrape again</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="section">
+    <div class="row container">
+        {{#if articles}}
+        {{#each articles}}
+        <div class="col s12 l12">
+
+            <div class="collection hoverable articlebox">
+                <li>
+                    <span class="card-title">{{this.title}}</span>
+                    <p>
+                        <i>Please read the full article <a href="{{this.link}}" target="_new">here</a>.</i>
+                    </p>
+                    {{!-- <a href="{{this.link}}">Link to Item</a> --}}
+                    <div class="btn right-align saveMe red" data-id={{this._id}}>Save me</div>
+                </li>
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}

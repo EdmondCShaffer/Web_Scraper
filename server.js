@@ -16,7 +16,8 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 // Make public a static folder
 // app.use(express.static("public"));
-app.use(express.static(path.join(__dirname + './public')));
+app.use(express.static(path.join(__dirname + '../public')));
+
 app.use(bodyParser.urlencoded({ extended:true}));
 
 app.use(bodyParser.json());
@@ -33,30 +34,6 @@ const db = require("./models");
 var router = require('./routes/apiRoutes.js');
 app.use(router);
 
-// app.get("/scrape", function (req, res) {
-//     request("https://www.nytimes.com/section/technology",function (response) {
-//         const $ = cheerio.load(response.data);
-//         $("li").each(function(i,element){
-//             let result = {};
-
-//             result.title = $(this)
-//             .children("a")
-//             .text();
-//             result.link = $(this)
-//             .children("a")
-//             .attr("href");
-
-//             db.Article.create(result)
-//             .then(function(dbArticle){
-//                 console.log(dbArticle)
-//             })
-//             .catch(function(err){
-//                 return res.json(err);
-//             });
-//         });
-//         res.send("Scrape Complete");
-//     });
-// });
 
 app.listen(PORT,()=>{
     console.log("App running on port" + PORT + "!");
